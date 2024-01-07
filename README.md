@@ -43,13 +43,11 @@ openssl x509 -req -extfile <(printf "subjectAltName=DNS:docker.container") -days
 
 3. In httpd.conf, uncomment the following lines:
 
-...
-#LoadModule socache_shmcb_module modules/mod_socache_shmcb.so
-...
-#LoadModule ssl_module modules/mod_ssl.so
-...
-#Include conf/extra/httpd-ssl.conf
-...
+    - #LoadModule socache_shmcb_module modules/mod_socache_shmcb.so
+
+    - #LoadModule ssl_module modules/mod_ssl.so
+
+    - #Include conf/extra/httpd-ssl.conf
 
 4. In httpd-ssl.conf, make sure that SSLCertificateFile and SSLCertificateKeyFile point to the right location.
 
